@@ -31,7 +31,6 @@ a:link, a:visited {
 	color: #FFF;
 	padding: 8px 12px;
 }
-
 a:hover {
 	color: #f7b600;
 	background: #FFF;
@@ -44,4 +43,36 @@ h1 {
 
 .branco {
 	color: white;
+}
+/*formatações area-principal*/
+#area-principal {
+	width: 920px;
+	margin: 0 auto;
+}
+
+#area-postagens, #area-lateral {
+	background: orange;
+}
+
+#area-postagens {
+	width: 660px;
+	float: left;
+}
+
+#area-lateral {
+	width: 240px;
+	float: right;
+}
+
+.postagem {
+	padding: 20px;
+	margin-bottom: 20px;
+	background: white;
+}
+
+#rodape {
+	background: #CCC;
+	clear: both;
+	text-align: center;
+	padding: 15px;
 }
