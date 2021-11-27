@@ -25,10 +25,11 @@ ul a {
 	text-decoration: none;
 	text-indent: 40px;
 	line-height: 40px;/*altura da linha*/
-	background: url(../imagens/menu.png) no-repeat left bottom;
+	background: #f7b600 url(../imagens/menu.png) no-repeat left bottom;
 }
 
 a:hover {
 	background-position: right bottom;
 	color: #fff;
+	background-color: #f99200;
 }
