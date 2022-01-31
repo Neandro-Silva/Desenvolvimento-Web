@@ -1,0 +1,27 @@
+header {
+	border: 1px solid #ccc;
+	background: #f2f2f2;
+	padding: 10px;
+}
+
+nav {
+	border: 1px solid green;
+	background: #f2f2f2;
+	padding: 10px;
+	height: 50px;
+}
+
+nav a{
+	text-decoration: none;
+	background: #dfdfdf;
+	color: green;
+}
+li {
+	float: left;
+	list-style: none;
+	padding-left: 15px;
+}
+
+footer {
+	background: #cece;
+}
