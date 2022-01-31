@@ -22,6 +22,19 @@ li {
 	padding-left: 15px;
 }
 
+article {
+	background: orange;
+	padding: 10px;
+}
+
+section {
+	border: 1px dotted #fff;
+}
+
+aside {
+	background: blue;
+}
+
 footer {
 	background: #cece;
 }
