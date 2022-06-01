@@ -17,11 +17,14 @@
 		var media = 7
 		var faltas_maximas = 15
 
-		if (nota >= media && faltas <= faltas_maximas) {
+		/*if (nota >= media && faltas <= faltas_maximas) {
 			document.write('Aprovado')
 		}else {
 			document.write('Reprovado')
-		}
+		}*/
+
+		var resultado = (nota >= media && faltas <= faltas_maximas) ? 'Aprovado' : 'Reprovado'
+		document.write(resultado)
 
 	</script>
 </head>
