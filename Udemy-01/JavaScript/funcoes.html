@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript</title>
+	<script type="text/javascript">
+
+		/*
+		function calcularAreaTerreno( largura, comprimento) {
+			
+			//lógica
+			var area = largura * comprimento
+
+			return area
+		}
+
+		var largura = prompt('Informe a largura')
+		var comprimento = prompt('Informe o comprimento')
+
+		var area = calcularAreaTerreno(largura,comprimento)
+
+		//document.write('O terreno possui ' + calcularAreaTerreno(largura,comprimento) + ' metros quadrados')
+		document.write('O terreno possui ' + area + ' metros quadrados')
+		*/
+
+		//Funções - Flexibilidade de parâmetros
+
+		function soma(a,b) {
+			b = b === undefined ? 0 : b
+			return a + b 
+		}
+		console.log(soma(7,7))
+		console.log(soma(7,7,8,9))//desconsidera os demais parametros adicionais...
+		console.log(soma(7)) // a primaira valera 7 e a segunda undefined...
+		console.log(soma()) //undefined, undefined
+	</script>
+</head>
+<body>
+
+</body>
+</html>
