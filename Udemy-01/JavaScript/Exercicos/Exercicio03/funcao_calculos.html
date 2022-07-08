@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JavaScript</title>
+	<script type="text/javascript">
+
+		var num1 = prompt('Digite o primeiro valor: ')
+		var num2 = prompt('Digite o segundo valor: ')
+		var operacao = prompt('Digite soma ou subtração: ')
+
+		function efetuar(num1, num2, operacao) {
+
+			num1 = parseInt(num1)
+			num2 = parseInt(num2)
+
+			var resultado = 0
+
+			if (operacao == 'soma' && 'Soma' && 'SOMA') {
+				resultado = num1 + num2
+			} else if (operacao == 'subtração' && 'Subtração' && 'SUBTRAÇÃO') {
+				resultado = num1 - num2
+			}
+			return resultado
+		}
+
+		document.write('O resultado é: ' + efetuar(num1,num2,operacao))
+		
+	</script>
+</head>
+<body>
+
+</body>
+</html>
