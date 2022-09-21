@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 05</title>
+
+    <script>
+
+        var objetos = Array('Cadeira','Impressora','Garfo')
+
+        function Adicionar() {
+
+            var n = document.getElementById('campo').value 
+            
+
+            if(n != '' ) {
+                
+                if(objetos.indexOf(n) !== -1) {
+                    alert('Objeto já adicionado')
+                }else {
+                    objetos.push(n)
+
+                    console.log(objetos)
+
+                    document.getElementById('campo').value = ''
+                }
+            }else{
+                alert('Informe um valor válido')
+            } 
+        }
+
+        function Ordenar() {
+            objetos.sort()
+            console.log(objetos)
+        }
+            
+    </script>
+
+</head>
+<body>
+    
+    <input id="campo" type="text" name="nome">
+    <button onclick="Adicionar()">Adicionar</button>
+    <button onclick="Ordenar()">Ordenar</button>
+
+</body>
+</html>
