@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        var listaFuncionarios = ['Viviane', 'Rosimeire', 'Aline', 'Vanessa', 'Isabela']
+
+        var f = function(valor, indice) {
+            console.log(valor, indice)
+        }
+
+        listaFuncionarios.forEach(f)
+
+        /*
+        listaFuncionarios.forEach(function(valor, indice) {
+            console.log(valor, indice)
+        })*/
+
+        /*
+        document.write(listaFuncionarios[3])
+
+        listaFuncionarios.forEach(function(valor, indice, array) {
+            //lógica
+            console.log('indice: ' + indice + ' | valor: ' + valor) 
+
+            if(valor == 'Vanessa') {
+                array[indice] = 'Um novo valor'
+            }
+             
+        }) //função callback vai indicar q o foreach como q ele tem q atuar em cada un dos índex do array
+
+        console.log(listaFuncionarios) 
+        document.write('<br>' + listaFuncionarios[3])
+        */
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
