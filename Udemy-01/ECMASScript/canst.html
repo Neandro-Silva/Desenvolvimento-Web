@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        
+        const SERIE = 'Friends' //deve usar caracteres maiúsculo
+
+        function x() {
+            const SERIE = 'The Walking Dead'
+            console.log('dentro da função: ' + SERIE)
+        }
+
+        x()
+
+        console.log('escopo global: ' + SERIE)
+
+
+    </script>
+</head>
+
+<body>
+    <div id="output"></div>
+</body>
+
+</html>
