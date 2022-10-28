@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        let nome = 'Neandro'
+        let idade = 23
+        let sexo = 'Masculino'
+        let profissao = 'Programador'
+
+        let objeto = {
+            nome: nome,
+            idade: idade,
+            sexo: sexo,
+            profissao: profissao,
+            exibirResumo: function() {
+                console.log(`${this.nome}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`)
+            }
+        }
+
+        console.log(objeto)
+        objeto.exibirResumo()
+
+        let objeto2 = {
+            nome, //nome = nome variável / valor = valor da variável
+            idade,
+            sexo,
+            profissao,
+            exibirResumo() {
+                console.log(`${this.nome}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`)
+            }
+        }
+
+        console.log(objeto2)
+        objeto2.exibirResumo()
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
