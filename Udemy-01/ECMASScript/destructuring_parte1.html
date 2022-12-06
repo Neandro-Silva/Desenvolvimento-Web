@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //destructuring
+
+        let frutas = ['Abacaxi', 'Uva', 'Pera', 'Mamão']
+        
+        //let [ a, b, , c ] = frutas //pular indice
+
+        let [ a, b = 'Abacate', c, d, e = 'Banana'] = frutas
+
+        //console.log(a, b, c, d, e)
+        let coisas = [['Abacaxi', 'Uva', 'Pera', 'Mamão'], ['José', 'Maria']]
+        let [,[,n2]] = coisas
+
+        console.log(n2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
