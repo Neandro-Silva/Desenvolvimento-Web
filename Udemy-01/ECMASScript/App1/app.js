@@ -68,7 +68,51 @@ class Bd {
     }
 
     pesquisar(despesa) {
+
+        let despesasFiltradas = Array()
+
+        despesasFiltradas = this.recuperarTodosRegistros()
+
         console.log(despesa)
+        console.log(despesasFiltradas)
+
+        //ano
+        if(despesa.ano != '') {
+            console.log('ano')
+            despesasFiltradas = despesasFiltradas.filter(d => d.ano == despesa.ano)
+        }
+
+        //mes
+        if(despesa.mes != '') {
+            console.log('mes')
+            despesasFiltradas = despesasFiltradas.filter(d => d.mes == despesa.mes)
+        }
+
+        //dia
+        if(despesa.dia != '') {
+            console.log('dia')
+            despesasFiltradas = despesasFiltradas.filter(d => d.dia == despesa.dia)
+        }
+
+        //tipo
+        if(despesa.tipo != '') {
+            console.log('tipo')
+            despesasFiltradas = despesasFiltradas.filter(d => d.tipo == despesa.tipo)
+        }
+
+        //descricao
+        if(despesa.descricao != '') {
+            console.log('descrição')
+            despesasFiltradas = despesasFiltradas.filter(d => d.descricao == despesa.descricao)
+        }
+        //valor
+        if(despesa.valor != '') {
+            console.log('valor')
+            despesasFiltradas = despesasFiltradas.filter(d => d.valor == despesa.valor)
+        }
+
+        console.log(despesasFiltradas)
+        
     }
 }
 
@@ -136,8 +180,6 @@ function carregaListaDespesas() {
 
     //percorrer o array despesas, listando cada despesa de forma dinâmica
     despesas.forEach(function(d) {
-
-        console.log(d)
         
         //criando a linha (tr)
         let linha = listaDespesas.insertRow()
