@@ -45,7 +45,7 @@ class Bd {
     recuperarTodosRegistros() {
 
         //array de despesas
-        let despesasRecuperadasArray = []
+        let despesas = Array()
 
         let qtdDeId = localStorage.getItem('id')
 
@@ -53,18 +53,19 @@ class Bd {
         for(let i = 1; i <= qtdDeId; i++) {
 
             //recuperar a despesa
-            let umaDespesaRecuperada = JSON.parse(localStorage.getItem(i)) //JSON.parse ->converte p/ objeto literal
+            let despesa = JSON.parse(localStorage.getItem(i)) //JSON.parse ->converte p/ objeto literal
 
             //existe a possibilidade de haver índices q foram pulados/removidos
             //nesse caso pula esses índices
-            if(umaDespesaRecuperada === null) {
+            if(despesa === null) {
                 continue 
             }
 
-            despesasRecuperadasArray.push(umaDespesaRecuperada)
+            despesa.id = i
+            despesas.push(despesa)
         }
 
-        return despesasRecuperadasArray
+        return despesas
     }
 
     pesquisar(despesa) {
@@ -72,9 +73,8 @@ class Bd {
         let despesasFiltradas = Array()
 
         despesasFiltradas = this.recuperarTodosRegistros()
-
-        console.log(despesa)
         console.log(despesasFiltradas)
+        console.log(despesa)
 
         //ano
         if(despesa.ano != '') {
@@ -113,6 +113,10 @@ class Bd {
 
         return despesasFiltradas
     }
+
+    remover(id) {
+        localStorage.removeItem(id)
+    }
 }
 
 let bd = new Bd()
@@ -126,7 +130,7 @@ function cadastrarDespesa() {
     let descricao = document.getElementById('descricao')
     let valor = document.getElementById('valor')
 
-    let despesaQuandoClicarNoBotao = new Despesa(
+    let despesa = new Despesa(
         ano.value, 
         mes.value, 
         dia.value, 
@@ -135,8 +139,8 @@ function cadastrarDespesa() {
         valor.value
     )
     
-    if(despesaQuandoClicarNoBotao.validarDados()) {
-        bd.gravar(despesaQuandoClicarNoBotao)
+    if(despesa.validarDados()) {
+        bd.gravar(despesa)
 
         document.getElementById('modal_titulo').innerHTML = 'Registro inserido com sucesso'
         document.getElementById('modal-cor-titulo').className = 'modal-header text-success'
@@ -182,7 +186,7 @@ function carregaListaDespesas(despesas = Array(), filtro = false) {
     despesas.forEach(function(d) {
         
         //criando a linha (tr)
-        let linha = listaDespesas.insertRow()
+        let linha = listaDespesas.insertRow();
 
         //criar as colunas (td)
         linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}` 
@@ -204,6 +208,21 @@ function carregaListaDespesas(despesas = Array(), filtro = false) {
 
         linha.insertCell(2).innerHTML = d.descricao
         linha.insertCell(3).innerHTML = d.valor
+
+        //criar o botão de exclusão
+        let btn = document.createElement('button')
+        btn.className = 'btn btn-danger'
+        btn.innerHTML = '<i class="fas fa-times"></i>'
+        btn.id = `id_despesa_${d.id}`
+        btn.onclick = function() { 
+            //remover a despesa 
+            let id = this.id.replace('id_despesa_','')
+            //alert(id)
+            bd.remover(id)
+            window.location.reload() //atualizar a página
+        }
+        linha.insertCell(4).append(btn)
+        console.log(d)
     })
 }
 
